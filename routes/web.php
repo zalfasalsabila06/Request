@@ -1,20 +1,18 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\ContactController;
-use App\Http\Controllers\AdminController;
+Route::get('/home', function () {
+    return view('home');
+});
 
+Route::get('/about', function () {
+    return view('about');
+});
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/contact', function () {
+    return view('contact');
+});
 
-Route::get('/', [UserController::class, 'create'])->name('user.create');
-Route::post('/user/store', [UserController::class, 'store'])->name('user.store');
-
-Route::get('/contact/create', [ContactController::class, 'create'])->name('contact.create');
-Route::post('/contact/create', [ContactController::class, 'store'])->name('contact.store');
-
-Route::get('/admin/create', [AdminController::class, 'create'])->name('admin.create');
-Route::post('/admin/store', [AdminController::class, 'store'])->name('admin.store');
+Route::get('/gallery', function () {
+    return view('gallery');
+});
